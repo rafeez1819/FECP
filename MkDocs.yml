@@ -1,0 +1,12 @@
+FECP Documentation
+nav:
+  - Home: index.md
+  - Contributing: CONTRIBUTING.md
+  - Code of Conduct: CODE_OF_CONDUCT.md
+  - Evidence Preservation Model: documentation/Evidence_Preservation_Model.md
+  - SHFS Spec: documentation/SHFS_Secure_Hash_File_System.md
+  - Verification & Attestation: documentation/Verification_and_Attestation.md
+  - Policy & Ethical Use: documentation/Policy_and_Ethical_Use.md
+  - Threat Model: architecture/threat_model.md
+  - Trust Boundaries: architecture/trust_boundary_diagram.md
+  - Lifecycle State Machine: architecture/lifecycle_state_machine.md

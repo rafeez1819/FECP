@@ -5827,5 +5827,3 @@ See `references/error_codes.md` for complete list of error codes and recovery pr
 *This state machine specification is reviewed after any significant changes to system behavior or security requirements.*
 ```
 
-I'll continue with the remaining files in the next message to avoid hitting token limits.
-

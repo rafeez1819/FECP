@@ -1,12 +1,103 @@
-FECP Documentation
+# -------------------------------------------------
+# mkdocs.yml – FECP documentation site
+# -------------------------------------------------
+site_name: "Forensic Evidence Collection Protocol (FECP)"
+site_description: "Comprehensive documentation, policies and security specifications"
+site_author: "Sherin Technologies, Inc."
+site_url: "https://YOUR_GITHUB_USERNAME.github.io/FECP"   # ← replace with your repo URL
+repo_url: "https://github.com/YOUR_GITHUB_USERNAME/FECP"
+repo_name: "Sherin FECP"
+
+# The markdown source lives in the repository root, not in a _docs_ folder.
+docs_dir: .
+site_dir: site                     # default build output directory
+
+# -------------------------------------------------
+# Theme (Material for MkDocs) – customize as you like
+# -------------------------------------------------
+theme:
+  name: material
+  logo: assets/logo.png            # optional – place a logo under `assets/`
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: amber
+    - scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - toc.integrate
+    - content.code.annotate
+
+# -------------------------------------------------
+# Markdown extensions (adds TOC, admonitions, tables, etc.)
+# -------------------------------------------------
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_alt
+
+# -------------------------------------------------
+# Plugins (search is built‑in; we add a minifier)
+# -------------------------------------------------
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+# -------------------------------------------------
+# Navigation – each entry points to the markdown file you already created
+# -------------------------------------------------
 nav:
-  - Home: index.md
+  - Home: README.md
   - Contributing: CONTRIBUTING.md
   - Code of Conduct: CODE_OF_CONDUCT.md
-  - Evidence Preservation Model: documentation/Evidence_Preservation_Model.md
-  - SHFS Spec: documentation/SHFS_Secure_Hash_File_System.md
-  - Verification & Attestation: documentation/Verification_and_Attestation.md
-  - Policy & Ethical Use: documentation/Policy_and_Ethical_Use.md
-  - Threat Model: architecture/threat_model.md
-  - Trust Boundaries: architecture/trust_boundary_diagram.md
-  - Lifecycle State Machine: architecture/lifecycle_state_machine.md
+  - Documentation:
+      - "Evidence Preservation Model": documentation/Evidence_Preservation_Model.md
+      - "SHFS – Secure Hash File System": documentation/SHFS_Secure_Hash_File_System.md
+      - "Verification & Attestation": documentation/Verification_and_Attestation.md
+      - "Policy & Ethical Use": documentation/Policy_and_Ethical_Use.md
+  - Architecture:
+      - "Threat Model (STRIDE)": architecture/threat_model.md
+      - "Trust‑Boundary Diagram": architecture/trust_boundary_diagram.md
+      - "Lifecycle State Machine": architecture/lifecycle_state_machine.md
+
+# -------------------------------------------------
+# Extra settings (optional but useful)
+# -------------------------------------------------
+extra:
+  version: "1.0.0"
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/YOUR_GITHUB_USERNAME/FECP
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/YOUR_TWITTER_HANDLE
+
+# -------------------------------------------------
+# Watch for changes in these paths when running `mkdocs serve`
+# -------------------------------------------------
+watch:
+  - docs/
+  - documentation/
+  - architecture/
+  - *.md
+  - mkdocs.yml
